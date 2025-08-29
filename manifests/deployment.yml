@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: dockerimagetoaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dockerimagetoaks
+  template:
+    metadata:
+      labels:
+        app: dockerimagetoaks 
+    spec:
+      containers:
+        - name: dockerimagetoaks 
+          image: acrado111.azurecr.io/dockerimagetoaks
+          ports:
+          - containerPort: 80
